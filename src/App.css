@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #666;
+}
+
+/* Секция пароля */
+.password-section {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.password-display input {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-family: monospace;
+  text-align: center;
+  background: white;
+}
+
+.password-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+  flex: 1;
+}
+
+.generate-btn {
+  background: #667eea;
+  color: white;
+}
+
+.generate-btn:hover {
+  background: #5a67d8;
+}
+
+.copy-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.copy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.copy-message {
+  color: #48bb78;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+}
+
+/* Индикатор надежности */
+.strength-meter {
+  margin-top: 20px;
+}
+
+.strength-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.strength-text {
+  font-weight: bold;
+}
+
+.strength-0, .strength-1 { color: #f56565; }
+.strength-2 { color: #ed8936; }
+.strength-3, .strength-4 { color: #48bb78; }
+
+.strength-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f56565, #ed8936, #48bb78);
+  transition: width 0.3s;
+}
+
+/* Настройки */
+.settings {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.settings h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.length-control {
+  margin-bottom: 20px;
+}
+
+.length-control label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.length-control input[type="range"] {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  outline: none;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* История */
+.history {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.history h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.password-preview {
+  font-family: monospace;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+.password-meta {
+  color: #718096;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.use-btn {
+  background: #4299e1;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  flex: none;
+}
+
+.delete-btn {
+  background: #fc8181;
+  color: white;
+  padding: 6px 10px;
+  font-size: 14px;
+  flex: none;
+}
+
+.clear-history {
+  background: transparent;
+  color: #718096;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+
+.clear-history:hover {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.tip {
+  margin-top: 5px;
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .app {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .password-actions {
+    flex-direction: column;
+  }
+  
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .history-actions {
+    width: 100%;
+  }
+}
